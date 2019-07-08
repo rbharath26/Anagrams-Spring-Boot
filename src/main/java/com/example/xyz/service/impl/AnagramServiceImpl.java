@@ -119,6 +119,7 @@ public class AnagramServiceImpl implements IAnagramService {
             } else {
                 ArrayList<String> anagramList = new ArrayList<>();
                 anagramList.add(str);
+                
                 map.put(key, anagramList);
             }
         }
@@ -131,13 +132,16 @@ public class AnagramServiceImpl implements IAnagramService {
         for (String str : wordsArr) {
         	 char[] key = str.toCharArray();
              Arrays.sort(key);
+             
              str = new String(key).toLowerCase();
              if (!map.containsKey(str)) {
             	anagramOject.setError(" Some Phrase doesnt have anagrams ");
      			                                         
              } 
              else {
-                 for (String p : map.get(str)) {
+                 ArrayList<String> anagramFinalList = map.get(str);
+                 Collections.shuffle(anagramFinalList); //randamize
+            	 for (String p : anagramFinalList) {
                 	 anagramString= anagramString+p + " ";
                 	 break;
                  }

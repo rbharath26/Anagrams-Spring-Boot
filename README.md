@@ -1,5 +1,5 @@
 # Anagrams-Spring-Boot
-# Anagram Service/Client
+# Anagram Service
 
 ### Service
 Using Spring Boot, Gradle, and your JVM language of choice, create a REST service that:
